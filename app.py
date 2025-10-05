@@ -83,5 +83,4 @@ async def download(resumen_text: str = Form(...), filename: str = Form("resumen.
     if not filename.lower().endswith(".txt"):
         filename += ".txt"
     return StreamingResponse(io.BytesIO(resumen_text.encode("utf-8")), media_type="text/plain", headers={"Content-Disposition": f"attachment; filename={filename}"})
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+
